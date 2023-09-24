@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TaskForm from './TaskForm';
 import { LuListTodo } from 'react-icons/lu';
 import Search from '../search/Search';
+import Filter from '../filter/Filter';
 
 const Content = styled.div`
   display: flex;
@@ -52,6 +53,8 @@ const TodoList = () => {
     },
   ]);
   const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('All');
+  const [sort, setSort] = useState('Asc');
 
   const deleteTask = (id) => {
     const newTask = [...tasks];
@@ -89,6 +92,7 @@ const TodoList = () => {
       </IconTitle>
 
       <Search search={search} setSearch={setSearch} />
+      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
 
       {tasks == '' ? (
         'Não há tarefas'
@@ -96,7 +100,19 @@ const TodoList = () => {
         <div>
           {tasks
             .filter((task) =>
+              filter === 'All'
+                ? true
+                : filter === 'Complete'
+                ? task.isComplete
+                : !task.isComplete,
+            )
+            .filter((task) =>
               task.text.toLowerCase().includes(search.toLowerCase()),
+            )
+            .sort((a, b) =>
+              sort === 'Asc'
+                ? a.text.localeCompare(b.text)
+                : b.text.localeCompare(a.text),
             )
             .map((task) => (
               <Task
