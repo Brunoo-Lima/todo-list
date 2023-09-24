@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Task from './Task';
 import styled from 'styled-components';
+import TaskForm from './TaskForm';
 
 const Content = styled.div`
   display: flex;
@@ -39,9 +40,17 @@ const TodoList = () => {
     setTasks(newTask);
   };
 
-  // const addTask = (text, category) => {
-  //   setTasks([...tasks, tasks]);
-  // };
+  const addTask = (text, category) => {
+    setTasks([
+      ...tasks,
+      {
+        id: Math.floor(Math.random() * 10000),
+        text,
+        category,
+        isComplete: false,
+      },
+    ]);
+  };
 
   return (
     <Content>
@@ -60,6 +69,7 @@ const TodoList = () => {
           ))}
         </div>
       )}
+      <TaskForm addTask={addTask} />
     </Content>
   );
 };
