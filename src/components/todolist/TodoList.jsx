@@ -1,5 +1,13 @@
 import { useState } from 'react';
 import Task from './Task';
+import styled from 'styled-components';
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+`;
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([
@@ -36,7 +44,8 @@ const TodoList = () => {
   // };
 
   return (
-    <div>
+    <Content>
+      <h1>Lista de Tarefas</h1>
       {tasks == '' ? (
         'Não há tarefas'
       ) : (
@@ -51,7 +60,7 @@ const TodoList = () => {
           ))}
         </div>
       )}
-    </div>
+    </Content>
   );
 };
 
