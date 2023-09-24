@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 const Tasks = styled.div`
   display: flex;
@@ -86,17 +87,12 @@ const Task = ({ task, deleteTask, completeTask }) => {
         <ButtonComplete onClick={() => completeTask(task.id)}>
           Completar
         </ButtonComplete>
-        <button
-          style={{
-            color: '#ffff',
-            padding: '8px',
-            background: '#e54',
-            border: 'none',
-          }}
+        <RiDeleteBin6Line
+          size={28}
+          style={{ color: '#e54', cursor: 'pointer' }}
           onClick={() => deleteTask(task.id)}
-        >
           X
-        </button>
+        />
       </ContentButtons>
     </Tasks>
   );
