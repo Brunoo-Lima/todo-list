@@ -3,6 +3,7 @@ import Task from './Task';
 import styled from 'styled-components';
 import TaskForm from './TaskForm';
 import { LuListTodo } from 'react-icons/lu';
+import Search from '../search/Search';
 
 const Content = styled.div`
   display: flex;
@@ -50,6 +51,7 @@ const TodoList = () => {
       isComplete: false,
     },
   ]);
+  const [search, setSearch] = useState('');
 
   const deleteTask = (id) => {
     const newTask = [...tasks];
@@ -86,18 +88,24 @@ const TodoList = () => {
         <Title>Lista de Tarefas</Title>
       </IconTitle>
 
+      <Search search={search} setSearch={setSearch} />
+
       {tasks == '' ? (
         'Não há tarefas'
       ) : (
         <div>
-          {tasks.map((task) => (
-            <Task
-              key={task.id}
-              task={task}
-              deleteTask={deleteTask}
-              completeTask={completeTask}
-            />
-          ))}
+          {tasks
+            .filter((task) =>
+              task.text.toLowerCase().includes(search.toLowerCase()),
+            )
+            .map((task) => (
+              <Task
+                key={task.id}
+                task={task}
+                deleteTask={deleteTask}
+                completeTask={completeTask}
+              />
+            ))}
         </div>
       )}
       <TaskForm addTask={addTask} />
