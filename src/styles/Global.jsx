@@ -16,8 +16,12 @@ export const Global = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
   }
 
+  body {
+    padding: 30px;
+    background-color: #011121;
+  }
+
   h1 {
-    text-align: center;
     margin-bottom: 8px;
   }
 `;
