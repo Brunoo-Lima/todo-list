@@ -5,6 +5,7 @@ import TaskForm from './TaskForm';
 import { LuListTodo } from 'react-icons/lu';
 import Search from '../search/Search';
 import Filter from '../filter/Filter';
+import { toast } from 'react-toastify';
 
 const Content = styled.div`
   display: flex;
@@ -45,21 +46,17 @@ const TodoList = () => {
       category: 'Trabalho',
       isComplete: false,
     },
-    {
-      id: 2,
-      text: 'Estudar TypeScript',
-      category: 'Estudo',
-      isComplete: false,
-    },
   ]);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('All');
   const [sort, setSort] = useState('Asc');
+  const notTask = 'Não há tarefas';
 
   const deleteTask = (id) => {
     const newTask = [...tasks];
     const filterTask = newTask.filter((task) => (task.id !== id ? task : null));
     setTasks(filterTask);
+    toast.success('Tarefa deletada com sucesso');
   };
 
   const completeTask = (id) => {
@@ -95,7 +92,7 @@ const TodoList = () => {
       <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
 
       {tasks == '' ? (
-        'Não há tarefas'
+        <p style={{ textAlign: 'center', margin: '20px 0' }}>{notTask}</p>
       ) : (
         <div>
           {tasks

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import TodoList from './components/todolist/TodoList';
 import Global from './styles/Global';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const Aplication = styled.div`
   max-width: 900px;
@@ -12,10 +14,13 @@ const Aplication = styled.div`
 
 const App = () => {
   return (
-    <Aplication>
-      <Global />
-      <TodoList />
-    </Aplication>
+    <>
+      <ToastContainer autoClose={1500} />
+      <Aplication>
+        <Global />
+        <TodoList />
+      </Aplication>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
 const Content = styled.div`
@@ -44,10 +45,14 @@ const TaskForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text || !category) return;
-    addTask(text, category);
-    setText('');
-    setCategory('');
+    if (!text || !category) {
+      toast.warning('Preencha todos os campos');
+    } else {
+      addTask(text, category);
+      setText('');
+      setCategory('');
+      toast.success('Tarefa criada com sucesso');
+    }
   };
 
   const Button = styled.button`

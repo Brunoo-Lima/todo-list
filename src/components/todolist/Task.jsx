@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+import { RiDeleteBin6Line, RiCheckboxCircleLine } from 'react-icons/ri';
 
 const Tasks = styled.div`
   display: flex;
@@ -53,28 +53,6 @@ const ContentButtons = styled.div`
   align-items: center;
 `;
 
-const ButtonComplete = styled.button`
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  margin-right: 5px;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #5cb85c;
-  opacity: 0.8;
-  transition: 0.2s;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  @media (max-width: 536px) {
-    display: block;
-    max-width: 100%;
-  }
-`;
-
 const Task = ({ task, deleteTask, completeTask }) => {
   return (
     <Tasks style={{ textDecoration: task.isComplete ? 'line-through' : '' }}>
@@ -84,9 +62,12 @@ const Task = ({ task, deleteTask, completeTask }) => {
       </Content>
 
       <ContentButtons>
-        <ButtonComplete onClick={() => completeTask(task.id)}>
+        <RiCheckboxCircleLine
+          size={28}
+          style={{ color: '#5cb85c', cursor: 'pointer', marginRight: '8px' }}
+          onClick={() => completeTask(task.id)}
           Completar
-        </ButtonComplete>
+        />
         <RiDeleteBin6Line
           size={28}
           style={{ color: '#e54', cursor: 'pointer' }}
