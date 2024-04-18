@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   Button,
+  Container,
   Content,
-  ContentInputs,
-  Input,
-  Select,
+  SubContent,
   Title,
 } from './styles/TaskFormStyle';
+import Input from '../form/Input';
+import Select from '../form/Select';
 
 const TaskForm = ({ addTask }) => {
   const [text, setText] = useState('');
@@ -26,31 +27,32 @@ const TaskForm = ({ addTask }) => {
   };
 
   return (
-    <Content>
+    <Container>
       <form onSubmit={handleSubmit}>
         <Title>Adicionar tarefa</Title>
-        <ContentInputs>
+        <Content>
           <Input
-            type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Digite a tarefa"
           />
+          <SubContent>
+            <Select
+              options={[
+                { value: '', label: 'Selecione a categoria' },
+                { value: 'Study', label: 'Estudo' },
+                { value: 'Personal', label: 'Pessoal' },
+                { value: 'Work', label: 'Trabalho' },
+              ]}
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
 
-          <Select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="">Selecione a categoria</option>
-            <option value="Estudo">Estudo</option>
-            <option value="Pessoal">Pessoal</option>
-            <option value="Trabalho">Trabalho</option>
-          </Select>
-
-          <Button type="submit">Adicionar Tarefa</Button>
-        </ContentInputs>
+            <Button type="submit">Adicionar Tarefa</Button>
+          </SubContent>
+        </Content>
       </form>
-    </Content>
+    </Container>
   );
 };
 

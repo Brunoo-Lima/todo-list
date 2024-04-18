@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Content = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   padding: 8px;
@@ -12,7 +12,11 @@ export const Title = styled.h2`
   margin-bottom: 8px;
 `;
 
-export const ContentInputs = styled.div`
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -20,13 +24,9 @@ export const ContentInputs = styled.div`
   }
 `;
 
-export const Input = styled.input`
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
-  margin-right: 4px;
-  width: 300px;
-  outline-color: #2384e6f5;
+export const SubContent = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const Select = styled.select`

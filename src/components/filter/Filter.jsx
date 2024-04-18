@@ -1,23 +1,33 @@
-import { Content, Ordenation, Select, Text } from './FilterStyle';
+import Select from '../form/Select';
+import { Container, Ordenation, Text } from './FilterStyle';
 
 const Filter = ({ filter, setFilter, setSort }) => {
   return (
-    <Content>
+    <Container>
       <Text>Status: </Text>
-      <Select value={filter} onChange={(e) => setFilter(e.target.value)}>
-        <option value="All">Todas</option>
-        <option value="Complete">Finalizada</option>
-        <option value="Incomplete">Pendente</option>
-      </Select>
+
+      <Select
+        options={[
+          { value: 'All', label: 'Todas' },
+          { value: 'Complete', label: 'Finalizada' },
+          { value: 'Incomplete', label: 'Pendente' },
+        ]}
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+      />
 
       <Ordenation>
         <Text>Ordenar: </Text>
-        <Select onChange={(e) => setSort(e.target.value)}>
-          <option value="Asc">Asc</option>
-          <option value="Desc">Desc</option>
-        </Select>
+
+        <Select
+          options={[
+            { value: 'Asc', label: 'Asc' },
+            { value: 'Desc', label: 'Desc' },
+          ]}
+          onChange={(e) => setSort(e.target.value)}
+        />
       </Ordenation>
-    </Content>
+    </Container>
   );
 };
 

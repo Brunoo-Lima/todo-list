@@ -5,7 +5,7 @@ import { LuListTodo } from 'react-icons/lu';
 import Search from '../search/Search';
 import Filter from '../filter/Filter';
 import { toast } from 'react-toastify';
-import { Content, Icon, IconTitle, Title } from './styles/TodoListStyle';
+import { Container, Icon, IconTitle, Title } from './styles/TodoListStyle';
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([
@@ -49,7 +49,7 @@ const TodoList = () => {
   };
 
   return (
-    <Content>
+    <Container>
       <IconTitle>
         <Icon>
           <LuListTodo />
@@ -66,9 +66,9 @@ const TodoList = () => {
         <div>
           {tasks
             .filter((task) =>
-              filter === 'All'
+              filter === 'Todas'
                 ? true
-                : filter === 'Complete'
+                : filter === 'Finalizada'
                 ? task.isComplete
                 : !task.isComplete,
             )
@@ -91,7 +91,7 @@ const TodoList = () => {
         </div>
       )}
       <TaskForm addTask={addTask} />
-    </Content>
+    </Container>
   );
 };
 

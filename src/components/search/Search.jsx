@@ -1,16 +1,17 @@
-import { Content, Input, Title } from './SearchStyle';
+import Input from '../form/Input';
+import { Container, Title } from './SearchStyle';
 
 const Search = ({ search, setSearch }) => {
   return (
-    <Content>
+    <Container>
       <Title>Pesquisar</Title>
+
       <Input
-        type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Digite sua pesquisa..."
       />
-    </Content>
+    </Container>
   );
 };
 

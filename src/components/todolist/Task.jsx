@@ -1,7 +1,7 @@
 import { RiDeleteBin6Line, RiCheckboxCircleLine } from 'react-icons/ri';
 import {
   Category,
-  Content,
+  Container,
   ContentButtons,
   Tasks,
   Text,
@@ -10,10 +10,10 @@ import {
 const Task = ({ task, deleteTask, completeTask }) => {
   return (
     <Tasks style={{ textDecoration: task.isComplete ? 'line-through' : '' }}>
-      <Content>
+      <Container>
         <Text>{task.text}</Text>
         <Category>{task.category}</Category>
-      </Content>
+      </Container>
 
       <ContentButtons>
         <RiCheckboxCircleLine

@@ -13,7 +13,7 @@ export const Tasks = styled.div`
     flex-direction: column;
   }
 `;
-export const Content = styled.div`
+export const Container = styled.div`
   padding: 10px 0;
   margin-bottom: 10px;
 
