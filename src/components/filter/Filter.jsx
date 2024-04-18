@@ -1,28 +1,4 @@
-import styled from 'styled-components';
-
-const Content = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-`;
-
-const Text = styled.p`
-  font-size: 16px;
-  margin-right: 4px;
-`;
-
-const Select = styled.select`
-  padding: 4px;
-  border-radius: 4px;
-  margin-right: 6px;
-  outline-color: #2384e6f5;
-`;
-
-const Ordenation = styled.div`
-  display: flex;
-  align-items: center;
-`;
+import { Content, Ordenation, Select, Text } from './FilterStyle';
 
 const Filter = ({ filter, setFilter, setSort }) => {
   return (
