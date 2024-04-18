@@ -4,7 +4,8 @@ import { Container, Ordenation, Text } from './FilterStyle';
 import { UserContext } from '../../UserContext';
 
 const Filter = () => {
-  const { filter, setFilter, setSort } = useContext(UserContext);
+  const { filter, setFilter, setSort, filterCategory, setFilterCategory } =
+    useContext(UserContext);
 
   return (
     <Container>
@@ -18,6 +19,18 @@ const Filter = () => {
         ]}
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
+      />
+
+      <Text>Categoria:</Text>
+      <Select
+        options={[
+          { value: 'All', label: 'Todas' },
+          { value: 'Study', label: 'Estudo' },
+          { value: 'Personal', label: 'Pessoal' },
+          { value: 'Work', label: 'Trabalho' },
+        ]}
+        value={filterCategory}
+        onChange={(e) => setFilterCategory(e.target.value)}
       />
 
       <Ordenation>

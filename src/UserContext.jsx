@@ -13,7 +13,8 @@ export const UserProvider = ({ children }) => {
     },
   ]);
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('Todas');
+  const [filterCategory, setFilterCategory] = useState('Todas');
   const [sort, setSort] = useState('Asc');
 
   const deleteTask = (id) => {
@@ -48,12 +49,15 @@ export const UserProvider = ({ children }) => {
 
     const matchesIsCompleted =
       filter === 'Todas'
-        ? true
+        ? task
         : filter === 'Finalizada'
         ? task.isComplete
         : !task.isComplete;
 
-    return matchesTask && matchesIsCompleted;
+    const matchesCategories =
+      filterCategory === 'Todas' ? true : filterCategory === task.category;
+
+    return matchesTask && matchesIsCompleted && matchesCategories;
   });
 
   const sortedTasks = filteredTasks.sort((t1, t2) =>
@@ -63,18 +67,17 @@ export const UserProvider = ({ children }) => {
   );
 
   const contextValue = {
-    tasks,
-    setTasks,
     search,
     setSearch,
     filter,
     setFilter,
-    sort,
     setSort,
     deleteTask,
     addTask,
     completeTask,
     sortedTasks,
+    filterCategory,
+    setFilterCategory,
   };
 
   return (
