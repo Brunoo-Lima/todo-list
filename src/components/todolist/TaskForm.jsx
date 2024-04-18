@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   Button,
@@ -9,10 +9,13 @@ import {
 } from './styles/TaskFormStyle';
 import Input from '../form/Input';
 import Select from '../form/Select';
+import { UserContext } from '../../UserContext';
 
-const TaskForm = ({ addTask }) => {
+const TaskForm = () => {
   const [text, setText] = useState('');
   const [category, setCategory] = useState('');
+
+  const { addTask } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();

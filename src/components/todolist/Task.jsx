@@ -6,8 +6,12 @@ import {
   Tasks,
   Text,
 } from './styles/TaskStyle';
+import { useContext } from 'react';
+import { UserContext } from '../../UserContext';
 
-const Task = ({ task, deleteTask, completeTask }) => {
+const Task = ({ task }) => {
+  const { deleteTask, completeTask } = useContext(UserContext);
+
   return (
     <Tasks style={{ textDecoration: task.isComplete ? 'line-through' : '' }}>
       <Container>

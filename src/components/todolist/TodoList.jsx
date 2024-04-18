@@ -14,17 +14,7 @@ import {
 import { UserContext } from '../../UserContext';
 
 const TodoList = () => {
-  const {
-    search,
-    setSearch,
-    filter,
-    setFilter,
-    setSort,
-    deleteTask,
-    completeTask,
-    addTask,
-    sortedTasks,
-  } = useContext(UserContext);
+  const { sortedTasks } = useContext(UserContext);
 
   return (
     <Container>
@@ -35,24 +25,20 @@ const TodoList = () => {
         <Title>Lista de Tarefas</Title>
       </IconTitle>
 
-      <Search search={search} setSearch={setSearch} />
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      <Search />
+      <Filter />
 
       {sortedTasks.length <= 0 ? (
         <TextNotTask>Não há tarefas.</TextNotTask>
       ) : (
         <div>
           {sortedTasks.map((task) => (
-            <Task
-              key={task.id}
-              task={task}
-              deleteTask={deleteTask}
-              completeTask={completeTask}
-            />
+            <Task key={task.id} task={task} />
           ))}
         </div>
       )}
-      <TaskForm addTask={addTask} />
+
+      <TaskForm />
     </Container>
   );
 };

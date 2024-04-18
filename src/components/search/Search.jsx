@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import Input from '../form/Input';
 import { Container, Title } from './SearchStyle';
+import { UserContext } from '../../UserContext';
 
-const Search = ({ search, setSearch }) => {
+const Search = () => {
+  const { search, setSearch } = useContext(UserContext);
+
   return (
     <Container>
       <Title>Pesquisar</Title>

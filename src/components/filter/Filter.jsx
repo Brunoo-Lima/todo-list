@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import Select from '../form/Select';
 import { Container, Ordenation, Text } from './FilterStyle';
+import { UserContext } from '../../UserContext';
 
-const Filter = ({ filter, setFilter, setSort }) => {
+const Filter = () => {
+  const { filter, setFilter, setSort } = useContext(UserContext);
+
   return (
     <Container>
       <Text>Status: </Text>
