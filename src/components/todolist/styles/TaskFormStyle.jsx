@@ -3,18 +3,16 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  padding: 8px;
-  margin: 10px;
 `;
 
 export const Title = styled.h2`
   text-align: center;
+  font-size: 1.7rem;
   margin-bottom: 8px;
 `;
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
 `;

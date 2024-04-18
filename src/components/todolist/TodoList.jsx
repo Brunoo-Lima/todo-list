@@ -2,43 +2,49 @@ import { useContext } from 'react';
 import Task from './Task';
 import TaskForm from './TaskForm';
 import { LuListTodo } from 'react-icons/lu';
-import Search from '../search/Search';
-import Filter from '../filter/Filter';
 import {
   Container,
+  Content,
   Icon,
   IconTitle,
   TextNotTask,
   Title,
+  ContentTask,
+  Tasks,
 } from './styles/TodoListStyle';
 import { UserContext } from '../../UserContext';
+import Sidebar from './Sidebar';
 
 const TodoList = () => {
   const { sortedTasks } = useContext(UserContext);
 
   return (
     <Container>
-      <IconTitle>
-        <Icon>
-          <LuListTodo />
-        </Icon>
-        <Title>Lista de Tarefas</Title>
-      </IconTitle>
+      <Sidebar />
+      <Content>
+        <TaskForm />
 
-      <Search />
-      <Filter />
+        <ContentTask>
+          <IconTitle>
+            <Icon>
+              <LuListTodo />
+            </Icon>
+            <Title>Lista de Tarefas</Title>
+          </IconTitle>
 
-      {sortedTasks.length <= 0 ? (
-        <TextNotTask>Não há tarefas.</TextNotTask>
-      ) : (
-        <div>
-          {sortedTasks.map((task) => (
-            <Task key={task.id} task={task} />
-          ))}
-        </div>
-      )}
-
-      <TaskForm />
+          <Tasks>
+            {sortedTasks.length <= 0 ? (
+              <TextNotTask>Não há tarefas.</TextNotTask>
+            ) : (
+              <>
+                {sortedTasks.map((task) => (
+                  <Task key={task.id} task={task} />
+                ))}
+              </>
+            )}
+          </Tasks>
+        </ContentTask>
+      </Content>
     </Container>
   );
 };

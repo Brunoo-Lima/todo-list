@@ -8,6 +8,7 @@ export const Tasks = styled.div`
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
+  width: 500px;
 
   @media (max-width: 536px) {
     flex-direction: column;

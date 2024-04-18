@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 90vh;
+`;
+
+export const Content = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
+  padding: 60px 20px;
+`;
+
+export const ContentTask = styled.div`
+  margin-top: 60px;
+  margin-bottom: 40px;
 `;
 
 export const IconTitle = styled.div`
@@ -15,20 +27,16 @@ export const IconTitle = styled.div`
 `;
 
 export const Icon = styled.div`
-  font-size: 2.5rem;
-
-  @media (max-width: 536px) {
-    font-size: 1.8rem;
-  }
+  font-size: 1.5rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-left: 8px;
+`;
 
-  @media (max-width: 536px) {
-    font-size: 1.8rem;
-  }
+export const Tasks = styled.div`
+  /* position: absolute; */
 `;
 
 export const TextNotTask = styled.p`

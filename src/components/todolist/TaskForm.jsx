@@ -51,7 +51,7 @@ const TaskForm = () => {
               onChange={(e) => setCategory(e.target.value)}
             />
 
-            <Button type="submit">Adicionar Tarefa</Button>
+            <Button type="submit">Adicionar</Button>
           </SubContent>
         </Content>
       </form>
