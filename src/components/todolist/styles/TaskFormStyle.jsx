@@ -15,13 +15,8 @@ export const Title = styled.h2`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 `;
 
 export const SubContent = styled.div`

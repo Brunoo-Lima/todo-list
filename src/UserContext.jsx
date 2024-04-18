@@ -43,6 +43,25 @@ export const UserProvider = ({ children }) => {
     ]);
   };
 
+  const filteredTasks = tasks.filter((task) => {
+    const matchesTask = task.text.toLowerCase().includes(search.toLowerCase());
+
+    const matchesIsCompleted =
+      filter === 'Todas'
+        ? true
+        : filter === 'Finalizada'
+        ? task.isComplete
+        : !task.isComplete;
+
+    return matchesTask && matchesIsCompleted;
+  });
+
+  const sortedTasks = filteredTasks.sort((t1, t2) =>
+    sort === 'Asc'
+      ? t1.text.localeCompare(t2.text)
+      : t2.text.localeCompare(t1.text),
+  );
+
   const contextValue = {
     tasks,
     setTasks,
@@ -55,6 +74,7 @@ export const UserProvider = ({ children }) => {
     deleteTask,
     addTask,
     completeTask,
+    sortedTasks,
   };
 
   return (

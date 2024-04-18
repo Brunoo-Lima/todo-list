@@ -30,3 +30,9 @@ export const Title = styled.h1`
     font-size: 1.8rem;
   }
 `;
+
+export const TextNotTask = styled.p`
+  text-align: center;
+  margin: 24px 0;
+  font-size: 16px;
+`;
