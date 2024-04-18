@@ -1,52 +1,27 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Task from './Task';
 import TaskForm from './TaskForm';
 import { LuListTodo } from 'react-icons/lu';
 import Search from '../search/Search';
 import Filter from '../filter/Filter';
-import { toast } from 'react-toastify';
 import { Container, Icon, IconTitle, Title } from './styles/TodoListStyle';
+import { UserContext } from '../../UserContext';
 
 const TodoList = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'Criar funcionalidade',
-      category: 'Trabalho',
-      isComplete: false,
-    },
-  ]);
-  const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('All');
-  const [sort, setSort] = useState('Asc');
+  const {
+    tasks,
+    search,
+    setSearch,
+    filter,
+    setFilter,
+    sort,
+    setSort,
+    deleteTask,
+    completeTask,
+    addTask,
+  } = useContext(UserContext);
+
   const notTask = 'Não há tarefas';
-
-  const deleteTask = (id) => {
-    const newTask = [...tasks];
-    const filterTask = newTask.filter((task) => (task.id !== id ? task : null));
-    setTasks(filterTask);
-    toast.success('Tarefa deletada com sucesso');
-  };
-
-  const completeTask = (id) => {
-    const newTask = [...tasks];
-    newTask.map((task) =>
-      task.id == id ? (task.isComplete = !task.isComplete) : task,
-    );
-    setTasks(newTask);
-  };
-
-  const addTask = (text, category) => {
-    setTasks([
-      ...tasks,
-      {
-        id: Math.floor(Math.random() * 10000),
-        text,
-        category,
-        isComplete: false,
-      },
-    ]);
-  };
 
   return (
     <Container>
