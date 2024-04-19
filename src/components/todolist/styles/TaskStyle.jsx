@@ -36,7 +36,7 @@ export const Text = styled.p`
 
 export const Category = styled.span`
   font-size: 16px;
-  background-color: #2384e6f5;
+  background-color: ${(props) => props.backgroundColor || '#ccc'};
   color: #fff;
   padding: 5px;
   margin-left: 10px;
