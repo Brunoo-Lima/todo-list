@@ -18,12 +18,20 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     padding: 20px 0;
-    background-color: #011121;
+    background-color: #ffffff;
   }
 
   h1 {
     margin-bottom: 8px;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+  background: transparent;
+}
 `;
 
 export default GlobalStyle;

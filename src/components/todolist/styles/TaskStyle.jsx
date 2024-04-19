@@ -9,6 +9,7 @@ export const Tasks = styled.div`
   margin: 10px 0;
   border-radius: 4px;
   width: 500px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 536px) {
     flex-direction: column;
@@ -39,7 +40,6 @@ export const Category = styled.span`
   background-color: ${(props) => props.backgroundColor || '#ccc'};
   color: #fff;
   padding: 5px;
-  margin-left: 10px;
   border-radius: 4px;
 
   @media (max-width: 536px) {
