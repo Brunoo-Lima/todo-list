@@ -3,46 +3,31 @@ import Search from '../Search';
 import { UserContext } from '../../../UserContext';
 import '@testing-library/jest-dom';
 
-describe('test Search', () => {
+const renderSearchWithContext = () => {
+  const defaultValues = {
+    search: '',
+    setSearch: jest.fn(),
+  };
+
+  return render(
+    <UserContext.Provider value={defaultValues}>
+      <Search />
+    </UserContext.Provider>,
+  );
+};
+describe.only('test Search', () => {
   it('should render return a component search', () => {
-    render(
-      <UserContext.Provider
-        value={{
-          search: '',
-          setSearch: jest.fn(),
-        }}
-      >
-        <Search />
-      </UserContext.Provider>,
-    );
+    renderSearchWithContext();
   });
 
   it('Should render text in the component search', () => {
-    const { getByText } = render(
-      <UserContext.Provider
-        value={{
-          search: '',
-          setSearch: jest.fn(),
-        }}
-      >
-        <Search />
-      </UserContext.Provider>,
-    );
+    const { getByText } = renderSearchWithContext();
 
     expect(getByText('Pesquisar')).toBeInTheDocument();
   });
 
   it('Should render Input in the component Search', () => {
-    const { getByPlaceholderText } = render(
-      <UserContext.Provider
-        value={{
-          search: '',
-          setSearch: jest.fn(),
-        }}
-      >
-        <Search />
-      </UserContext.Provider>,
-    );
+    const { getByPlaceholderText } = renderSearchWithContext();
 
     const input = getByPlaceholderText('Pesquise sua tarefa...');
 

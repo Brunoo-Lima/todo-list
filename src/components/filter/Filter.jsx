@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Select from '../form/Select';
-import { Container, ContainerSelect, Ordenation, Text } from './FilterStyle';
+import { Container, ContainerSelect, Ordenation } from './FilterStyle';
 import { UserContext } from '../../UserContext';
 
 const Filter = () => {
@@ -10,19 +10,16 @@ const Filter = () => {
   return (
     <Container>
       <Ordenation>
-        <Text>Ordenar: </Text>
-
         <Select
           options={[
             { value: 'Asc', label: 'Asc' },
             { value: 'Desc', label: 'Desc' },
           ]}
           onChange={(e) => setSort(e.target.value)}
+          label={`Ordenar:`}
         />
       </Ordenation>
       <ContainerSelect>
-        <Text>Status: </Text>
-
         <Select
           options={[
             { value: 'All', label: 'Todas' },
@@ -31,11 +28,11 @@ const Filter = () => {
           ]}
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
+          label={`Status:`}
         />
       </ContainerSelect>
 
       <ContainerSelect>
-        <Text>Categoria:</Text>
         <Select
           options={[
             { value: 'All', label: 'Todas' },
@@ -45,6 +42,7 @@ const Filter = () => {
           ]}
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
+          label={`Categoria:`}
         />
       </ContainerSelect>
     </Container>
