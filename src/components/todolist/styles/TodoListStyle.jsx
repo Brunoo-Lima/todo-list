@@ -30,6 +30,11 @@ export const Content = styled.div`
   @media (max-width: 1000px) {
     margin: none;
   }
+
+  @media (max-width: 500px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 export const IconTitle = styled.div`
@@ -42,6 +47,10 @@ export const IconTitle = styled.div`
 export const Title = styled.h1`
   font-size: 1.5rem;
   margin-left: 0.5rem;
+
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const ContainerTasks = styled.div`

@@ -13,6 +13,6 @@ export const InputField = styled.input`
   }
 
   @media (max-width: 500px) {
-    width: 280px;
+    width: 240px;
   }
 `;

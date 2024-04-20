@@ -17,7 +17,7 @@ export const Tasks = styled.div`
   }
 
   @media (max-width: 467px) {
-    width: 250px;
+    width: 200px;
   }
 `;
 export const Container = styled.div`
@@ -37,6 +37,7 @@ export const Text = styled.p`
 
   @media (max-width: 536px) {
     border-bottom: 1px solid #cecece;
+    text-align: center;
   }
 `;
 

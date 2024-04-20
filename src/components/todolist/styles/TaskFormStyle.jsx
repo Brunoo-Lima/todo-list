@@ -32,6 +32,12 @@ export const Content = styled.div`
 export const SubContent = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 0.5rem 0;
+    width: 100%;
+  }
 `;
 
 export const Select = styled.select`

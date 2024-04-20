@@ -8,6 +8,9 @@ export const Container = styled.div`
   height: 100%;
 
   @media (max-width: 768px) {
-    height: 250px;
+    height: 280px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0;
   }
 `;

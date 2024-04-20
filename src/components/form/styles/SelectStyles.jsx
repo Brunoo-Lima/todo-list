@@ -7,4 +7,8 @@ export const SelectField = styled.select`
   outline-color: #2384e6f5;
   border: none;
   font-size: 0.875rem;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
