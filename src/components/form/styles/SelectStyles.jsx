@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const SelectField = styled.select`
-  padding: 4px;
+  padding: 0.25rem;
   border-radius: 4px;
-  margin-right: 6px;
+  margin-right: 0.375rem;
   outline-color: #2384e6f5;
   border: none;
+  font-size: 0.875rem;
 `;

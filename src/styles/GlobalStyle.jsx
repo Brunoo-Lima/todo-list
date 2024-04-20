@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
+    font-family: "Lato", sans-serif;
   }
 
   :root {
@@ -17,16 +17,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    padding: 20px 0;
-    background-color: #ffffff;
-  }
-
-  h1 {
-    margin-bottom: 8px;
+    padding: 1.25rem 2rem;
+    background-color: #f7f7f7f7;
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0.625rem;
   }
 
   ::-webkit-scrollbar-track {

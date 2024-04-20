@@ -5,7 +5,6 @@ import { LuListTodo } from 'react-icons/lu';
 import {
   Container,
   Content,
-  Icon,
   IconTitle,
   TextNotTask,
   Title,
@@ -25,9 +24,7 @@ const TodoList = () => {
         <TaskForm />
 
         <IconTitle>
-          <Icon>
-            <LuListTodo />
-          </Icon>
+          <LuListTodo size={24} />
           <Title>Lista de Tarefas</Title>
         </IconTitle>
 

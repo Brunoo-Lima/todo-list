@@ -6,6 +6,7 @@ import {
   Content,
   SubContent,
   Title,
+  Text,
 } from './styles/TaskFormStyle';
 import Input from '../form/Input';
 import Select from '../form/Select';
@@ -51,7 +52,9 @@ const TaskForm = () => {
               onChange={(e) => setCategory(e.target.value)}
             />
 
-            <Button type="submit">Adicionar</Button>
+            <Button type="submit">
+              <Text>Adicionar</Text>
+            </Button>
           </SubContent>
         </Content>
       </form>

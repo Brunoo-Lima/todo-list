@@ -7,10 +7,15 @@ export const Container = styled.div`
 
   max-width: 1100px;
   margin: 0 auto;
-  background-color: #efefefef;
+  background-color: #efefef;
   border-radius: 6px;
   border: 1px solid #c7c7c7;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
 `;
 
 export const Content = styled.div`
@@ -18,31 +23,35 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  padding: 48px 20px;
+  padding: 3rem 1.25rem;
   height: 100%;
   overflow-y: hidden;
+
+  @media (max-width: 1000px) {
+    margin: none;
+  }
 `;
 
 export const IconTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
-`;
-
-export const Icon = styled.div`
-  font-size: 1.5rem;
+  margin-top: 3.75rem;
 `;
 
 export const Title = styled.h1`
   font-size: 1.5rem;
-  margin-left: 8px;
+  margin-left: 0.5rem;
 `;
 
 export const ContainerTasks = styled.div`
   overflow: hidden;
   flex: 1;
   width: 520px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const Tasks = styled.div`
@@ -52,6 +61,6 @@ export const Tasks = styled.div`
 
 export const TextNotTask = styled.p`
   text-align: center;
-  margin: 24px 0;
-  font-size: 16px;
+  margin: 1.5rem 0;
+  font-size: 1rem;
 `;

@@ -17,9 +17,9 @@ const Task = ({ task }) => {
       case 'estudo':
         return '#2384e6f5';
       case 'trabalho':
-        return '#ff6347';
+        return '#74514b';
       case 'pessoal':
-        return '#4caf50';
+        return '#359c38';
       default:
         return '#ccc';
     }
@@ -29,7 +29,7 @@ const Task = ({ task }) => {
     <Tasks style={{ textDecoration: task.isComplete ? 'line-through' : '' }}>
       <Container>
         <Text>{task.text}</Text>
-        <Category backgroundColor={getBackgroundColor(task.category)}>
+        <Category color={getBackgroundColor(task.category)}>
           {task.category}
         </Category>
       </Container>
@@ -39,13 +39,11 @@ const Task = ({ task }) => {
           size={28}
           style={{ color: '#5cb85c', cursor: 'pointer', marginRight: '8px' }}
           onClick={() => completeTask(task.id)}
-          Completar
         />
         <RiDeleteBin6Line
           size={28}
           style={{ color: '#e54', cursor: 'pointer' }}
           onClick={() => deleteTask(task.id)}
-          X
         />
       </ContentButtons>
     </Tasks>

@@ -13,7 +13,7 @@ const Search = () => {
       <Input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Digite sua pesquisa..."
+        placeholder="Pesquise sua tarefa..."
       />
     </Container>
   );

@@ -8,13 +8,25 @@ export const Container = styled.div`
 export const Title = styled.h2`
   text-align: center;
   font-size: 1.7rem;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
+
+  @media (max-width: 1000px) {
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 `;
 
 export const SubContent = styled.div`
@@ -23,16 +35,16 @@ export const SubContent = styled.div`
 `;
 
 export const Select = styled.select`
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 4px;
   border: none;
-  margin-right: 4px;
+  margin: 0 0.25rem;
   outline-color: #2384e6f5;
 `;
 
 export const Button = styled.button`
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 6px;
   border: none;
   background-color: #333974;
   color: #fff;
@@ -43,4 +55,9 @@ export const Button = styled.button`
   &:hover {
     opacity: 1;
   }
+`;
+
+export const Text = styled.p`
+  font-size: 0.875rem;
+  font-weight: 600;
 `;
