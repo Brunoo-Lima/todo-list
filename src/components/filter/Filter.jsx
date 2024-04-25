@@ -1,6 +1,14 @@
 import { useContext } from 'react';
 import Select from '../form/Select';
-import { Container, ContainerSelect, Ordenation } from './FilterStyle';
+import {
+  Container,
+  ContainerSelect,
+  Ordenation,
+  Title,
+  ContainerTitle,
+  LineLeft,
+  LineRight,
+} from './FilterStyle';
 import { UserContext } from '../../UserContext';
 
 const Filter = () => {
@@ -9,6 +17,11 @@ const Filter = () => {
 
   return (
     <Container>
+      <ContainerTitle>
+        <LineLeft></LineLeft>
+        <Title>Filtros</Title>
+        <LineRight></LineRight>
+      </ContainerTitle>
       <Ordenation>
         <Select
           options={[

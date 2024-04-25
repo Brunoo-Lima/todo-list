@@ -7,7 +7,6 @@ export const InputField = styled.input`
   border: none;
   outline-color: #2384e6f5;
   font-size: 0.875rem;
-  margin-right: -0.375rem;
 
   @media (max-width: 768px) {
     width: 400px;
