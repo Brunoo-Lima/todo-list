@@ -1,6 +1,8 @@
 # TodoList
 
-Projeto consiste em uma lista de tarefas onde podemos adicionar, deletar, atualizar e buscar, tem um sistema de busca e filtragem por finalizadas e pendentes, tem também por ordenação ascendente e descendente. Projeto básico para consolidar alguns conceitos do React, aproveitei também para usar o Styled-Components.
+Projeto consiste em uma listagem de tarefas onde podemos adicionar, deletar, atualizar e consultar, baseado em um sistema de busca e filtragem por status da tarefa, ordenação e por categoria.
+
+Projeto básico para prática de testes, e para usar o Styled-Components.
 
 ## Tecnologias Utilizadas
 
@@ -8,3 +10,5 @@ Projeto consiste em uma lista de tarefas onde podemos adicionar, deletar, atuali
 - Styled-Components
 - React-icons
 - React-Toastify
+- Jest
+- Testing Libray

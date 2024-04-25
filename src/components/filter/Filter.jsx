@@ -29,7 +29,7 @@ const Filter = () => {
             { value: 'Desc', label: 'Desc' },
           ]}
           onChange={(e) => setSort(e.target.value)}
-          label={`Ordenar:`}
+          label="Ordenar:"
         />
       </Ordenation>
       <ContainerSelect>
@@ -41,7 +41,7 @@ const Filter = () => {
           ]}
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          label={`Status:`}
+          label="Status:"
         />
       </ContainerSelect>
 
@@ -55,7 +55,7 @@ const Filter = () => {
           ]}
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          label={`Categoria:`}
+          label="Categoria:"
         />
       </ContainerSelect>
     </Container>
