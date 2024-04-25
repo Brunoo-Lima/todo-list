@@ -14,7 +14,7 @@ export const SelectField = styled.select`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled.label`
   font-size: 1rem;
   font-weight: 600;
 `;

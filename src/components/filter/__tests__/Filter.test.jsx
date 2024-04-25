@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { UserContext } from './../../../UserContext';
 import Filter from './../Filter';
+import Select from '../../form/Select';
 
 const renderFilterWithContext = () => {
   const defaultValues = {
@@ -30,16 +31,6 @@ describe('Test Filter', () => {
 
     expect(getByText('Ordenar:')).toBeInTheDocument();
   });
-
-  // it.only('should render click change status in the component Filter', () => {
-  //   const { getByLabelText } = renderFilterWithContext();
-
-  //   const button = fireEvent.change(getByLabelText(/Ordenar/), {
-  //     target: { value: 'Asc' },
-  //   });
-
-  //   expect(button).toHaveBeenCalledWith('Asc');
-  // });
 
   it('should render text status in the component Filter', () => {
     const { getByText } = renderFilterWithContext();
