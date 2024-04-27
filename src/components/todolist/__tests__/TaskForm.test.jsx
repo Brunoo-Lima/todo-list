@@ -1,5 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
-import '@testing-library/jest-dom/';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { UserContext } from '../../../UserContext';
 import TaskForm from '../TaskForm';
 
@@ -15,11 +14,12 @@ const renderTaskFormWithContext = () => {
   );
 };
 
-describe('Test TaskForm', () => {
+describe('<TaskForm/>', () => {
   it('should render taskform title ', () => {
     const { getByText } = renderTaskFormWithContext();
+    const title = getByText(/Adicionar tarefa/i);
 
-    expect(getByText('Adicionar tarefa')).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
   });
 
   it('should render Input Component in the TaskForm', () => {
@@ -29,6 +29,15 @@ describe('Test TaskForm', () => {
   });
 
   it('should render text button', () => {
+    const { getByText } = renderTaskFormWithContext();
+
+    const buttonTextElement = getByText('Adicionar');
+    const buttonText = buttonTextElement.textContent;
+
+    expect(buttonText).toBe('Adicionar');
+  });
+
+  it('should render button', () => {
     const { getByText } = renderTaskFormWithContext();
 
     const buttonTextElement = getByText('Adicionar');

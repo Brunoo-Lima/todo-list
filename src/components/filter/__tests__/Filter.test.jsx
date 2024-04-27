@@ -1,7 +1,6 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { UserContext } from './../../../UserContext';
 import Filter from './../Filter';
-import Select from '../../form/Select';
 
 const renderFilterWithContext = () => {
   const defaultValues = {
@@ -19,7 +18,7 @@ const renderFilterWithContext = () => {
   );
 };
 
-describe('Test Filter', () => {
+describe('<Filter />', () => {
   it('should render title in the component Filter', () => {
     const { getByText } = renderFilterWithContext();
 

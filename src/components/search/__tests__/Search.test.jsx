@@ -15,7 +15,7 @@ const renderSearchWithContext = () => {
     </UserContext.Provider>,
   );
 };
-describe.only('test Search', () => {
+describe.only('<Search />', () => {
   it('should render return a component search', () => {
     renderSearchWithContext();
   });

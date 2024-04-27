@@ -15,7 +15,7 @@ const renderSidebarWithContext = () => {
   );
 };
 
-describe('Test Sidebar', () => {
+describe('<Sidebar />', () => {
   it.only('should render the Search Component in the sidebar', () => {
     const { getByText } = renderSidebarWithContext();
 

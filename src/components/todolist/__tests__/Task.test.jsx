@@ -21,7 +21,7 @@ const renderTaskWithContext = () => {
   );
 };
 
-describe('Test Task', () => {
+describe('<Task />', () => {
   it('should render task text and category', () => {
     const { getByText } = renderTaskWithContext();
 
