@@ -7,6 +7,7 @@ const Input = ({ value, onChange, placeholder }) => {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      data-testId={'testId'}
     />
   );
 };
